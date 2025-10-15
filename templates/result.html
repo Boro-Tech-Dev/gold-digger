@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gold Decision Result</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <style>
+        body { padding-top: 40px; }
+        .score-display { font-size: 2rem; font-weight: bold; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1 class="text-center mb-4">Gold Decision Matrix Result</h1>
+    <div class="row mb-4">
+        <div class="col-md-6 offset-md-3 text-center">
+            <p class="score-display">Score: {{ '%.2f' % score }} / 100</p>
+            <p class="h3">Recommendation: <strong>{{ zone }}</strong></p>
+        </div>
+    </div>
+    <h3>Factor Breakdown</h3>
+    <table class="table table-striped table-bordered">
+        <thead>
+        <tr>
+            <th>Factor</th>
+            <th>Your Score (0–10)</th>
+            <th>Weighted Contribution</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for factor, value in inputs.items() %}
+            <tr>
+                <td>{{ factor.replace('_', ' ').title() }}</td>
+                <td>{{ value }}</td>
+                <td>{{ '%.2f' % contributions[factor] }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <div class="text-center">
+        <a href="/" class="btn btn-secondary">Back</a>
+    </div>
+</div>
+</body>
+</html>

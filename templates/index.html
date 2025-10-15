@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gold Decision Matrix</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <style>
+        body {
+            padding-top: 40px;
+        }
+        .form-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1 class="text-center mb-4">Gold Decision Matrix</h1>
+    <p class="text-center">Enter your assessment (0–10) for each factor below. 0 = most negative / least supportive; 10 = most positive / highly supportive for gold.</p>
+    <div class="form-container">
+        <form method="POST">
+            <div class="form-group">
+                <label for="real_rate">Real Interest Rate Environment</label>
+                <input type="number" class="form-control" id="real_rate" name="real_rate" min="0" max="10" step="0.1" required>
+                <small class="form-text text-muted">Lower real yields → higher score.</small>
+            </div>
+            <div class="form-group">
+                <label for="inflation">Inflation Expectations / Surprise</label>
+                <input type="number" class="form-control" id="inflation" name="inflation" min="0" max="10" step="0.1" required>
+                <small class="form-text text-muted">Higher inflation expectations → higher score.</small>
+            </div>
+            <div class="form-group">
+                <label for="macro_stress">Macro & Financial Stress</label>
+                <input type="number" class="form-control" id="macro_stress" name="macro_stress" min="0" max="10" step="0.1" required>
+                <small class="form-text text-muted">Crisis and volatility → higher score.</small>
+            </div>
+            <div class="form-group">
+                <label for="currency">Currency & USD Strength</label>
+                <input type="number" class="form-control" id="currency" name="currency" min="0" max="10" step="0.1" required>
+                <small class="form-text text-muted">Weak USD → higher score.</small>
+            </div>
+            <div class="form-group">
+                <label for="central_banks">Central Bank Flows</label>
+                <input type="number" class="form-control" id="central_banks" name="central_banks" min="0" max="10" step="0.1" required>
+                <small class="form-text text-muted">Net central bank buying → higher score.</small>
+            </div>
+            <div class="form-group">
+                <label for="investor_flows">Investor Flows & Sentiment</label>
+                <input type="number" class="form-control" id="investor_flows" name="investor_flows" min="0" max="10" step="0.1" required>
+                <small class="form-text text-muted">Bullish flows / bearish sentiment → higher score.</small>
+            </div>
+            <div class="form-group">
+                <label for="technical">Technical Momentum</label>
+                <input type="number" class="form-control" id="technical" name="technical" min="0" max="10" step="0.1" required>
+                <small class="form-text text-muted">Positive trend and breakout → higher score.</small>
+            </div>
+            <div class="form-group">
+                <label for="supply">Supply & Production Constraints</label>
+                <input type="number" class="form-control" id="supply" name="supply" min="0" max="10" step="0.1" required>
+                <small class="form-text text-muted">Constrained supply → higher score.</small>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Compute Score</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
